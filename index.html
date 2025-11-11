@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selamat ulang tahun sayangkuu</title>
+<style>
+body {margin:0;font-family:sans-serif;background:#ffe6f2;overflow-x:hidden;}
+#typing {font-size:22px;padding:20px;white-space: pre-line;}
+.slideshow-container {position:relative;max-width:100%;margin:auto;}
+.slide {display:none;width:100%;}
+.fade {animation-name:fade;animation-duration:2s;}
+@keyframes fade {from{opacity:.4} to{opacity:1}}
+.balloons {position:fixed;bottom:-150px;width:100%;left:0;pointer-events:none;}
+.balloon {position:absolute;width:60px;animation:rise 10s infinite ease-in;}
+@keyframes rise {0%{transform:translateY(0);}100%{transform:translateY(-120vh);}}
+</style>
+</head>
+<body>
+
+<audio id="bgm" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="typing"></div>
+
+<div class="slideshow-container">
+  <img class="slide fade" src="Locket_1762867739679_91.jpg">
+  <img class="slide fade" src="4-20251008-182216-b1gu5oeqjeuukrhwIMZ5KLrz.png">
+  <img class="slide fade" src="IMG-20250921-WA0000.jpg">
+</div>
+
+<div class="balloons">
+  <img class="balloon" style="left:10%" src="balloon.png">
+  <img class="balloon" style="left:40%;animation-delay:2s" src="balloon.png">
+  <img class="balloon" style="left:70%;animation-delay:4s" src="balloon.png">
+</div>
+
+<script>
+var text = "Happy birthday, my best wishes to you. Sorry I can't celebrate in person🥺, but I sincerely wish you a happy birthday and may good things always be with you.\n\nSelamattt ulangg tahun yaa cantikkk, emoga rezekinya dilancarkan dan urusannya di mudahkan, semoga impian ayang di tahun ini bisa tercapai, semoga sehat selalu sayangg, and semoga ayang bisa menjadi diri sendiri yang lebih baik dari sebelum nya untuk ke depannya, jangan lupa sayang sama kedua orang tua, terimakasih selama ini bisa terus sama aku dan sayang sama aku, jangan lupa bahagia selalu yaa💏";
+let i=0;
+function type(){if(i<text.length){document.getElementById("typing").innerHTML+=text.charAt(i);i++;setTimeout(type,40);}}
+type();
+
+let slideIndex=0;
+function showSlides(){
+ let slides=document.getElementsByClassName("slide");
+ for(let s of slides) s.style.display="none";
+ slideIndex++;
+ if(slideIndex>slides.length) slideIndex=1;
+ slides[slideIndex-1].style.display="block";
+ setTimeout(showSlides,3000);
+}
+showSlides();
+</script>
+
+</body>
+</html>
